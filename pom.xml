@@ -4,15 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.mule.extensions</groupId>
-    <artifactId>test-extension-1</artifactId>
+    <artifactId>options-extension</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>mule-extension</packaging>
 
     <parent>
         <groupId>org.mule.extensions</groupId>
-        <artifactId>mule-extensions-parent</artifactId>
-        <version>4.0.0-SNAPSHOT</version>
+        <artifactId>mule-modules-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
     </parent>
 
     <dependencies>

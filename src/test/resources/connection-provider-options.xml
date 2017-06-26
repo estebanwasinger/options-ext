@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:options="http://www.mulesoft.org/schema/mule/options"
+      xmlns="http://www.mulesoft.org/schema/mule/core"
+      xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+               http://www.mulesoft.org/schema/mule/options http://www.mulesoft.org/schema/mule/options/current/mule-options.xsd">
+
+    <options:config name="with-option-parameter-connection">
+        <options:with-option-parameter-connection channel="dummyValue"/>
+    </options:config>
+
+    <options:config name="with-option-with-required-param-connection">
+        <options:with-option-with-required-param-connection channel="dummyValue" required1="value1" required2="value2"/>
+    </options:config>
+
+    <options:config name="options-with-required-params-from-param-group-connection">
+        <options:with-options-with-required-params-from-param-group-connection optionParam="someValue"
+                                                                               channels="dummyValue" anyParameter="someValue"/>
+    </options:config>
+
+    <options:config name="options-with-required-params-from-show-in-dsl-group-connection">
+        <options:with-options-with-required-params-from-show-in-dsl-group-connection optionParam="someValue" >
+            <options:some-group channels="someValue" anyParameter="someValue"/>
+        </options:with-options-with-required-params-from-show-in-dsl-group-connection>
+    </options:config>
+
+</mule>

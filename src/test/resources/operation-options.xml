@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:options="http://www.mulesoft.org/schema/mule/options"
+      xmlns="http://www.mulesoft.org/schema/mule/core"
+      xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+               http://www.mulesoft.org/schema/mule/options http://www.mulesoft.org/schema/mule/options/current/mule-options.xsd">
+
+    <options:config name="config">
+        <options:connection></options:connection>
+        <options:config-values>
+            <options:config-value value="config1"/>
+            <options:config-value value="config2"/>
+            <options:config-value value="config3"/>
+        </options:config-values>
+    </options:config>
+
+    <flow name="single-options-enabled-parameter">
+        <options:single-options-enabled-parameter channels="dummyValue"/>
+    </flow>
+
+    <flow name="singleOptionsEnabledParameterWithConnection">
+        <options:single-options-enabled-parameter-with-connection config-ref="config" channels="dummyValue"/>
+    </flow>
+
+    <flow name="singleOptionsEnabledParameterWithConfiguration">
+        <options:single-options-enabled-parameter-with-configuration config-ref="config" channels="dummyValue"/>
+    </flow>
+
+    <flow name="singleOptionsEnabledParameterWithRequiredParameters">
+        <options:single-options-enabled-parameter-with-required-parameters channels="dummyValue" requiredInteger="2" requiredString="aString">
+            <options:strings>
+                <options:string value="1"/>
+                <options:string value="2"/>
+            </options:strings>
+        </options:single-options-enabled-parameter-with-required-parameters>
+    </flow>
+
+    <flow name="singleOptionsEnabledParameterInsideParameterGroup">
+        <options:single-options-enabled-parameter-inside-parameter-group anyParameter="aParam" channels="dummyValue"/>
+    </flow>
+
+    <flow name="singleOptionsEnabledParameterRequiresValuesOfParameterGroup">
+        <options:single-options-enabled-parameter-requires-values-of-parameter-group anyParameter="aParam" channels="dummyValue" values="dummyValue"/>
+    </flow>
+
+    <flow name="multiLevelOption">
+        <options:multi-level-option />
+    </flow>
+
+    <flow name="singleOptionsWithRequiredParameterWithAlias">
+        <options:single-options-with-required-parameter-with-alias channels="dummyValue" superString="dummyValue"/>
+    </flow>
+
+    <flow name="resolverGetsMuleContextInjection">
+        <options:resolver-gets-mule-context-injection channel="dummyValue"/>
+    </flow>
+
+    <flow name="optionsInsideShowInDslGroup">
+        <options:options-inside-show-in-dsl-group values="dummyValue">
+            <options:options-group channels="dummyValue" anyParameter="someValue"/>
+        </options:options-inside-show-in-dsl-group>
+    </flow>
+
+</mule>
